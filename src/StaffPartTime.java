@@ -1,24 +1,35 @@
-public class StaffPartTime extends Staff {
-    private int soGioLamViec;
-    private int luongTheoGio;
+
+class StaffPartTime extends Staff {
+    int soGioLamViec;
+    int luongTheoGio;
 
     public StaffPartTime(String staffID, String name, int age, String telephone, String email,
-                            int soGioLamViec, int luongTheoGio) {
+                            int soGioLamViec,int luongTheoGio) {
         super(staffID, name, age, telephone, email);
         this.soGioLamViec = soGioLamViec;
         this.luongTheoGio = luongTheoGio;
     }
 
-
-    public int salaryCalculation() {
-        return soGioLamViec * luongTheoGio;
+    public int getSoGioLamViec() {
+        return soGioLamViec;
+    }
+    public void setSoGioLamViec(int soGioLamViec) {
+        this.soGioLamViec = soGioLamViec;
+    }
+    public int getLuongTheoGio() {
+        return luongTheoGio;
+    }
+    public void setLuongTheoGio(int luongTheoGio) {
+        this.luongTheoGio = luongTheoGio;
     }
 
     @Override
-    public void showInformation() {
-        super.showInformation();
-        System.out.println("So gio lam viec: " + soGioLamViec);
-        System.out.println("Luong theo gio: " + luongTheoGio);
-        System.out.println("Tong luong: " + salaryCalculation());
+    public double tinhLuong() {
+        return soGioLamViec * 100000;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Lương Parttime: " + tinhLuong();
     }
 }

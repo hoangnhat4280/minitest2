@@ -1,9 +1,11 @@
-public abstract class Staff {
-    private String staffID;
-    private String name;
-    private int age;
-    private String telephone;
-    private String email;
+
+abstract class Staff {
+    String staffID;
+    String name;
+    int age;
+    String telephone;
+    String email;
+
 
     public Staff(String staffID, String name, int age, String telephone, String email) {
         this.staffID = staffID;
@@ -47,14 +49,17 @@ public abstract class Staff {
     public void setEmail(String email) {
         this.email = email;
     }
-    public abstract int salaryCalculation();
 
-    public void showInformation() {
-        System.out.println("Ma nhan vien: " + staffID);
-        System.out.println("Ho ten: " + name);
-        System.out.println("Tuoi: " + age);
-        System.out.println("So dien thoai: " + telephone);
-        System.out.println("Email: " + email);
+
+
+    public abstract double tinhLuong();
+
+    @Override
+    public String toString() {
+        return "Mã: " + staffID + ", Họ tên: " + name + ", Tuổi: " + age +
+                ", SĐT: " + telephone + ", Email: " + email;
     }
-
 }
+
+
+
